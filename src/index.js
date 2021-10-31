@@ -1,19 +1,20 @@
+import { render } from '../runtime/jsx-runtime';
 import './styles/main.css';
-import { createElement } from './library'
 
 const Header = (props) => (
 	<div>
-		<h3>Mello {props ? props.name : 'world'}</h3>
+		<h3 onclick="doSomething()">Mello {props ? props.name : 'world'}</h3>
 	</div>
 )
-
+function doSomething(){alert("hi")}
 
 const SayHello = (props) => (
 	<div>
-		<Header name="test"/>
-		<p>I hope you're having a good day</p>
+		<Header name={props.name} />
+		<p>text in div</p>
 	</div>
 )
 
-/* <Component /> === Component() */
-document.getElementById('root').appendChild(<SayHello name="foo" />)
+render(<SayHello name="foo" />, document.getElementById('root'));
+
+//document.getElementById('root').appendChild(<SayHello name="foo" />)

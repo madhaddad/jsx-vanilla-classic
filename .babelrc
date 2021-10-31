@@ -1,17 +1,11 @@
 {
-"presets": [
-                    [
-                        "@babel/preset-react",
-                        {
-                          "pragma": "createElement", // default pragma is React.createElement (only in classic runtime)
-                          "pragmaFrag": "createFrag", // default is React.Fragment (only in classic runtime)
-                          "throwIfNamespace": false, // defaults to true
-                          "runtime": "classic" // defaults to classic
-                          // "importSource": "custom-jsx-library" // defaults to react (only in automatic runtime)
-                        }
-                      ]
-                ]
-  }
-
-
-  
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic", // defaults to classic
+        "importSource": "../runtime" // defaults to react (only in automatic runtime)
+      }
+    ]
+  ]
+}
